@@ -150,8 +150,11 @@ def main(productFolder,outputFolder,points=None):
         # create coordinate transformation
         inSpatialRef = osr.SpatialReference()
         inSpatialRef.ImportFromEPSG(4326)
-        inSpatialRef.SetAxisMappingStrategy(osr.OAMS_TRADITIONAL_GIS_ORDER)
-        # keep the traditionnal GIS order for GDAL > 3
+        # keep the traditionnal GIS order even if GDAL > 3
+        try:
+            inSpatialRef.SetAxisMappingStrategy(osr.OAMS_TRADITIONAL_GIS_ORDER)
+        except:
+            pass
         coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
 
     # loop through angle definition
