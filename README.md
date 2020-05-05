@@ -13,12 +13,12 @@ examples:
 
 `python extractViewAngle.py SENTINEL2A_20180224-103018-463_L2A_T31TGK_C_V2-2 angles`
 
-`python extractViewAngle.py SENTINEL2A_20180224-103018-463_L2A_T31TGK_C_V2-2 angles points.txt`
+`python extractViewAngle.py SENTINEL2A_20180224-103018-463_L2A_T31TGK_C_V2-2 angles points.csv`
 
-where `points.txt` contains a list of longitude and latityde separated by a space:
+where `points.csv` contains a list of longitude and latitude separated by a comma:
 
-> 6.16800 44.88358  
-> 6.40165 45.03698  
+> 6.16800,44.88358  
+> 6.40165,45.03698  
 etc.
 
 In raster mode it's really just the reformatting of the metadata file (MDT xml file). In point mode the code additionally checks the detector footprints to solve for ambiguities in areas where the MTD angle grids overlap. No resampling is performed.

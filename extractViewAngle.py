@@ -19,7 +19,7 @@ import xml.etree.ElementTree as ET
 # function to read points file as lon lat values delimited by tab without header line
 def readPoints(f):
     with open(f,'r') as csvfile:
-        reader = csv.reader(csvfile,delimiter=' ')
+        reader = csv.reader(csvfile,delimiter=',')
         data = [r for r in reader]
         return data
 
