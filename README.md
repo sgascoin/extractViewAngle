@@ -21,6 +21,6 @@ where `points.txt` contains a list of longitude and latityde separated by a spac
 > 6.40165 45.03698  
 etc.
 
-In raster mode it's really just the reformatting of the metadata file (MDT xml file). In point mode the code additionally checks the detectors footprints to solve for ambiguities in areas where the MTD angle grid overlap. No resampling is performed.
+In raster mode it's really just the reformatting of the metadata file (MDT xml file). In point mode the code additionally checks the detector footprints to solve for ambiguities in areas where the MTD angle grids overlap. No resampling is performed.
 
 It should work for any version of Theia L2A (tested for v1-1 and v2-2). If the detector footprints are not available, in case of ambiguity the code takes the value of the first detector by default. In this configuration, the code should also work with L1C and ESA L2A products as long as the MDT xml file is present at the root of the product directory.
