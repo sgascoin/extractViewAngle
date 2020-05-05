@@ -3,7 +3,6 @@
 """
 extractViewAngle.py
 Scope: export points or raster of viewing incidences angles from a Theia L2A product (rasters are scaled by 100 as UInt16) 
-Usage: extractViewAngle.py MTD.xml outputPixelSize outputFolder
 Author: simon.gascoin@cesbio.cnes.fr
 """
 
