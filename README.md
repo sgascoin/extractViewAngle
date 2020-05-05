@@ -5,9 +5,9 @@ usage in raster mode:
 
 `extractViewAngle.py productFolder outputFolder`
 
-usage in point mode (space delimited values): 
+usage in point mode: 
 
-`extractViewAngle.py productFolder outputFolder point_table_as_lon_lat.txt`
+`extractViewAngle.py productFolder outputFolder point_table_as_lon_lat.csv`
 
 examples:
 
