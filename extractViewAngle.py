@@ -33,11 +33,7 @@ def writePoints(newPointsFn,outDictList):
         writer.writeheader()
         for ouDict in outDictList:
             writer.writerow(ouDict)
-    # best line in this code
-    # header = ('lon,lat'+',VA_d{:d}'*7).format(*range(3,10))
-    # 'B2','B3','B4','B5','B6','B7','B8','B8A','B11','B12'
-    #np.savetxt(newPointsFn, data, fmt="%g", delimiter=",",header=header,comments='')
-    # outDictList
+
 
 # function to write an array to a (multiband) geotiff 
 def array2geotiff(newRasterFn,geoTransform,array,noData,outSpatialRef,dataType=gdal.GDT_Float64):
@@ -301,6 +297,4 @@ if __name__ == "__main__":
         sys.exit(1)
     else:
         main(productFolder,outputFolder,points)
-
- # python extractViewAngle.py SENTINEL2A_20180224-103018-463_L2A_T31TGK_C_V2-2 angles/ pointLautaret1.csv
  
