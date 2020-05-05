@@ -150,6 +150,8 @@ def main(productFolder,outputFolder,points=None):
         # create coordinate transformation
         inSpatialRef = osr.SpatialReference()
         inSpatialRef.ImportFromEPSG(4326)
+        inSpatialRef.SetAxisMappingStrategy(osr.OAMS_TRADITIONAL_GIS_ORDER)
+        # keep the traditionnal GIS order for GDAL > 3
         coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
 
     # loop through angle definition
@@ -199,7 +201,7 @@ def main(productFolder,outputFolder,points=None):
                     lon,lat = float(pointCoord[0]),float(pointCoord[1])
                     # create a geometry from coordinates
                     point = ogr.Geometry(ogr.wkbPoint)
-                    point.AddPoint(lon, lat) # the order depends on version?
+                    point.AddPoint(lon, lat) # traditionnal GIS order
                     # transform point
                     point.Transform(coordTransform)
                     # find position in array
