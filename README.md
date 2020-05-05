@@ -1,5 +1,5 @@
 # extractViewAngle
-`extractViewAngle.py` is a script to export points or raster of viewing incidences angles from a Theia L2A product. In raster mode it will write a multiband geotiff file for each band and angle (zenith and azimuth) scaled by 100 and stored as UInt16. In point mode it will write the value of the incidence angles at every point provided in geographic coordinates (no data is -10000).
+[`extractViewAngle.py`](https://github.com/sgascoin/extractViewAngle/blob/master/extractViewAngle.py)  is a script to export points or raster of viewing incidences angles from a Theia L2A product. In raster mode it will write a multiband geotiff file for each band and angle (zenith and azimuth) scaled by 100 and stored as UInt16. In point mode it will write the value of the incidence angles at every point provided in geographic coordinates (no data is -10000).
 
 usage in raster mode: 
 
