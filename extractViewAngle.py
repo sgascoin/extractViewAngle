@@ -151,7 +151,6 @@ def main(productFolder,outputFolder,points=None):
         inSpatialRef = osr.SpatialReference()
         inSpatialRef.ImportFromEPSG(4326)
         coordTransform = osr.CoordinateTransformation(inSpatialRef, outSpatialRef)
-        #bandList = [element.text for element in root.find(".//*Band_Global_List").iter('BAND_ID')]
 
     # loop through angle definition
     for angle in ('Azimuth','Zenith'):
@@ -200,7 +199,7 @@ def main(productFolder,outputFolder,points=None):
                     lon,lat = float(pointCoord[0]),float(pointCoord[1])
                     # create a geometry from coordinates
                     point = ogr.Geometry(ogr.wkbPoint)
-                    point.AddPoint(lat, lon)
+                    point.AddPoint(lon, lat) # the order depends on version?
                     # transform point
                     point.Transform(coordTransform)
                     # find position in array
@@ -245,6 +244,8 @@ def main(productFolder,outputFolder,points=None):
                             if test is False: 
                                 v = noDataCsv
 
+                    outDictList[ipoint]['lon'] = lon
+                    outDictList[ipoint]['lat'] = lat
                     # add this value to the output dictionnary 
                     if bandId in outDictList[ipoint]:
                         outDictList[ipoint][bandId].append(float(v))
